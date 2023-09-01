@@ -1,3 +1,5 @@
+// create a variable to hold your NFT's
+const NFTs = []
 // variables that allows the user to input their names, shirt type, bling 
 
 var userName = prompt("Enter your Name: "); 
@@ -9,8 +11,6 @@ var userAccessory = prompt("Pick an Accessory(Gold Chains, Diamond Ear-Piercings
 // Divider between the input and output
 console.log("--------------------------------") 
 
-// create a variable to hold your NFT's
-const NFTs = []
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
