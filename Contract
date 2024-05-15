@@ -1,0 +1,81 @@
+// JavaScript Contract
+
+class SimpleContract {
+  constructor() {
+    this._stringVar = "";  // String variable
+    this._numberVar = 0;   // Number variable
+    this._booleanVar = false;  // Boolean variable
+    this._arrayVar = [];   // Array variable
+  }
+
+  // Get and set methods for stringVar
+  getStringVar() {
+    return this._stringVar;
+  }
+
+  setStringVar(value) {
+    if (typeof value === 'string') {
+      this._stringVar = value;
+      return this._stringVar;
+    } else {
+      throw new Error("Value must be a string");
+    }
+  }
+
+  // Get and set methods for numberVar
+  getNumberVar() {
+    return this._numberVar;
+  }
+
+  setNumberVar(value) {
+    if (typeof value === 'number') {
+      this._numberVar = value;
+      return this._numberVar;
+    } else {
+      throw new Error("Value must be a number");
+    }
+  }
+
+  // Get and set methods for booleanVar
+  getBooleanVar() {
+    return this._booleanVar;
+  }
+
+  setBooleanVar(value) {
+    if (typeof value === 'boolean') {
+      this._booleanVar = value;
+      return this._booleanVar;
+    } else {
+      throw new Error("Value must be a boolean");
+    }
+  }
+
+  // Get and set methods for arrayVar
+  getArrayVar() {
+    return this._arrayVar;
+  }
+
+  setArrayVar(value) {
+    if (Array.isArray(value)) {
+      this._arrayVar = value;
+      return this._arrayVar;
+    } else {
+      throw new Error("Value must be an array");
+    }
+  }
+}
+
+// Example usage:
+let contract = new SimpleContract();
+
+console.log(contract.setStringVar("Hello"));  // "Hello"
+console.log(contract.getStringVar());  // "Hello"
+
+console.log(contract.setNumberVar(42));  // 42
+console.log(contract.getNumberVar());  // 42
+
+console.log(contract.setBooleanVar(true));  // true
+console.log(contract.getBooleanVar());  // true
+
+console.log(contract.setArrayVar([1, 2, 3]));  // [1, 2, 3]
+console.log(contract.getArrayVar());  // [1, 2, 3]
