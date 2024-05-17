@@ -1,0 +1,30 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract EtherValue {
+    uint256 public weiValue;
+    uint256 public etherValue;
+    uint256 public gweiValue;
+
+    // Function to receive Ether. This function is called when ether is sent to the contract.
+    receive() external payable {
+        updateValues(msg.value);
+    }
+
+    // Fallback function in case someone sends Ether to the contract without any data.
+    fallback() external payable {
+        updateValues(msg.value);
+    }
+
+    // Update the values in wei, ether, and gwei
+    function updateValues(uint256 _amount) internal {
+        weiValue = _amount;
+        etherValue = _amount / 1 ether;
+        gweiValue = _amount / 1 gwei;
+    }
+
+    // Get values in wei, ether, and gwei
+    function getValues() external view returns (uint256, uint256, uint256) {
+        return (weiValue, etherValue, gweiValue);
+    }
+}
